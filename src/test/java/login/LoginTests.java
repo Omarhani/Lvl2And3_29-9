@@ -1,6 +1,7 @@
 package login;
 
 import base.BaseTests;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import reader.ReadDataFromJson;
 
@@ -8,24 +9,18 @@ import java.io.FileNotFoundException;
 
 public class LoginTests extends BaseTests {
 
-
-    @Test
-    public void t1() throws FileNotFoundException {
+    @DataProvider
+    public Object[][] t2() throws FileNotFoundException {
         readDataFromJson = new ReadDataFromJson();
-        System.out.println(readDataFromJson.readJsonFile().URL);
-        System.out.println(readDataFromJson.readJsonFile().Login.ValidCredentials.Username);
-        System.out.println(readDataFromJson.readJsonFile().Login.ValidCredentials.Password);
-
-
-        System.out.println(readDataFromJson.readJsonFile().Login.InvalidCredentials.InvalidUsername.Username);
-        System.out.println(readDataFromJson.readJsonFile().Login.InvalidCredentials.InvalidUsername.Password);
-
-
-        System.out.println(readDataFromJson.readJsonFile().Login.InvalidCredentials.InvalidPassword.Username);
-        System.out.println(readDataFromJson.readJsonFile().Login.InvalidCredentials.InvalidPassword.Password);
+        return readDataFromJson.readJsonFile().Login1;
+    }
+    @Test(dataProvider = "t2")
+    public void t1(String username,String password) {
+        System.out.println(username);
+        System.out.println(password);
     }
     @Test
     public void testSuccessfulLogin() {
-        homePage.clickOnLoginLink();
+
     }
 }

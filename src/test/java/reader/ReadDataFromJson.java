@@ -2,7 +2,6 @@ package reader;
 
 import com.google.gson.Gson;
 import data.DataModel;
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 

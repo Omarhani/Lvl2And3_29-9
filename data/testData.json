@@ -1,4 +1,10 @@
 {
+  "Login1": [
+    ["Omar","123"],
+    ["Mohamed","456"],
+    ["Omar","123"],
+    ["Mohamed","456"]
+  ],
   "URL": "https://demo.nopcommerce.com/",
   "Login": {
     "ValidCredentials" : {
