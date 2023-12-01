@@ -3,6 +3,7 @@ package login;
 import base.BaseTests;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import pages.LoginPage;
 import reader.ReadDataFromJson;
 
 import java.io.FileNotFoundException;
@@ -19,8 +20,9 @@ public class LoginTests extends BaseTests {
         System.out.println(username);
         System.out.println(password);
     }
-    @Test
-    public void testSuccessfulLogin() {
-
+    @Test(dataProvider = "t2")
+    public void testSuccessfulLogin(String username,String password) {
+        LoginPage loginPage  = homePage.clickOnLoginLink();
+        loginPage.loginFeature(username,password);
     }
 }

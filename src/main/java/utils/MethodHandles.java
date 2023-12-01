@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class MethodHandles {
-    WebDriver driver;
+    protected WebDriver driver;
 
     WebDriverWait wait;
 
@@ -33,7 +33,7 @@ public class MethodHandles {
                 ExpectedConditions.elementToBeClickable(locator)));
     }
 
-    protected void scrollToElement(WebDriver driver, WebElement element) {
+    private void scrollToElement(WebDriver driver, WebElement element) {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         jsExecutor.executeScript(
                 "arguments[0].scrollIntoView({ behavior: 'auto', block: 'center', inline: 'center' });"
@@ -55,6 +55,19 @@ public class MethodHandles {
 
         // actions
         webElement(locator).click();
+
+    }
+    protected void sendKeys(By locator,String text){
+        // wait until  inv of loader
+        invisibilityOfElement(loader,20);
+
+        // wait
+        explicitWait(locator,20);
+        // scroll into element
+        scrollToElement(driver, driver.findElement(locator));
+
+        // actions
+        webElement(locator).sendKeys(text);
 
     }
 }

@@ -10,7 +10,8 @@ public class HomePage extends MethodHandles {
     }
     private final By loginLink = By.cssSelector(".ico-login");
 
-    public void clickOnLoginLink(){
+    public LoginPage clickOnLoginLink(){
         click(loginLink);
+        return new LoginPage(driver);
     }
 }
