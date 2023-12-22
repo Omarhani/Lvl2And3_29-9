@@ -1,40 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Regression Test Suite" parallel="tests" thread-count="4" >
+<suite name="Regression Test Suite" >
 
 
-    <test name="Run On chrome" parallel="classes" thread-count="3">
+    <test name="Run On chrome" >
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="login.LoginTests"/>
-            <class name="login.LoginTests1"/>
-            <class name="login.LoginTests2"/>
-        </classes>
-    </test> <!-- Test -->
-
-
-    <test name="Run On firefox" parallel="classes" thread-count="2">
-        <parameter name="browser" value="firefox"/>
-        <classes>
-            <class name="login.LoginTests"/>
-            <class name="login.LoginTests2"/>
-        </classes>
-    </test> <!-- Test -->
-    <test name="Run On headlessChrome" parallel="classes" thread-count="3">
-        <parameter name="browser" value="headlessChrome"/>
-        <classes>
-            <class name="login.LoginTests"/>
-            <class name="login.LoginTests1"/>
-            <class name="login.LoginTests2"/>
-        </classes>
-    </test> <!-- Test -->
-
-
-    <test name="Run On headlessfirefox" parallel="classes" thread-count="2">
-        <parameter name="browser" value="headlessfirefox"/>
-        <classes>
-            <class name="login.LoginTests"/>
-            <class name="login.LoginTests2"/>
         </classes>
     </test> <!-- Test -->
 
